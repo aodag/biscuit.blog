@@ -23,6 +23,7 @@ setup(name="biscuit.blog",
       namespace_packages=["biscuit"],
       install_requires=requires,
       tests_require=tests_require,
+      test_suite="biscuit.blog",
       extras_require={
           "testing": tests_require,
       },

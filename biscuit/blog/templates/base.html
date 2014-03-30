@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    %for url in assets['css-all'].urls():
+    <link rel="stylesheet" href="${url}">
+    %endfor
+    %for url in assets['js-all'].urls():
+    <script src="${url}"></script>
+    %endfor
+  </head>
+  <body>
+    ${next.body()}
+  </body>
+</html>
