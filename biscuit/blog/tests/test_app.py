@@ -1,11 +1,6 @@
 import unittest
 import webtest
-
-
-class DummyAssets(object):
-    def urls(self):
-        return []
-
+from ..testing import DummyAssets, use_database, _makeBlog
 
 class TestApp(unittest.TestCase):
     def test_it(self):
@@ -16,4 +11,6 @@ class TestApp(unittest.TestCase):
         }
         app = Application(assets)
         app = webtest.TestApp(app)
-        app.get('/')
+        with use_database('sqlite:///'):
+            _makeBlog(name='default')
+            app.get('/')
