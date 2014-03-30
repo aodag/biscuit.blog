@@ -15,6 +15,7 @@ requires = [
 
 tests_require = [
     "testfixtures",
+    "webtest",
 ]
 
 
